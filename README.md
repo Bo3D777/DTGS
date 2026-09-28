@@ -116,40 +116,6 @@ python render.py \
     --configs arguments/endonerf/default.py
 ```
 
-**Rendering options:**
-
-| Flag                  | Description                                  |
-| --------------------- | -------------------------------------------- |
-| `--model_path`        | Path to the trained model directory          |
-| `--iteration`         | Checkpoint iteration to load (`-1` = latest) |
-| `--skip_train`        | Skip rendering training views                |
-| `--skip_test`         | Skip rendering test views                    |
-| `--skip_video`        | Skip rendering video sequence                |
-| `--reconstruct_train` | Reconstruct point clouds from training views |
-| `--reconstruct_test`  | Reconstruct point clouds from test views     |
-| `--reconstruct_video` | Reconstruct point clouds from video views    |
-| `--configs`           | Hyperparameter config file                   |
-
-Rendered outputs are saved to:
-
-```
-output/<exp_name>/
-├── train/
-│   └── ours_<iteration>/
-│       ├── renders/      # Rendered images
-│       ├── gt/           # Ground-truth images
-│       ├── depth/        # Rendered depth maps
-│       └── ...
-├── test/
-│   └── ours_<iteration>/
-│       └── ...
-├── video/
-│   └── ours_<iteration>/
-│       ├── ours_video.mp4
-│       └── gt_video.mp4
-└── reconstruct/          # Reconstructed point clouds
-```
-
 ### 3. Evaluation
 
 Compute PSNR, SSIM, LPIPS, and RMSE metrics on rendered results:
@@ -160,10 +126,4 @@ python metrics.py \
     -p test
 ```
 
-| Flag                  | Description                                   |
-| --------------------- | --------------------------------------------- |
-| `--model_path` / `-m` | Path(s) to the trained model directory        |
-| `--phase` / `-p`      | Evaluation phase: `train`, `test`, or `video` |
-
-Results are saved as JSON files under the model directory.
 
