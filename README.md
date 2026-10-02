@@ -60,8 +60,6 @@ pip install -r requirements.txt
 
 Download the **Dynamic_LTR** dataset and place it under the `data/` directory.
 
-> **Note:** The Dynamic_LTR dataset is currently being organized and will be released in mid-August.
-
 ```
 DTGS/
 ├── data/
